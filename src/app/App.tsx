@@ -1,7 +1,5 @@
-import 'src/design/index.css';
+import '../design/index.css';
 
 export const App = () => {
-  return (
-    <div>App placeholder</div>
-  );
+  return <div>App placeholder</div>;
 };
