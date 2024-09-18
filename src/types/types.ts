@@ -17,6 +17,18 @@ export interface Currencies {
   [key: string]: Currency;
 }
 
+export enum CurrencyCode {
+  EUR = 'EUR',
+  USD = 'USD',
+  JPY = 'JPY',
+  CZK = 'CZC',
+  GBP = 'GBP',
+  PLN = 'PLN',
+  AUD = 'AUD',
+  CAD = 'CAD',
+  CNY = 'CNA',
+}
+
 export interface Rates {
   [key: string]: number;
 }
