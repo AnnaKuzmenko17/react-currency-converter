@@ -1,4 +1,5 @@
 import {CurrencyInfo} from './components/CurrencyInfo';
+import {HEADER_CURRENCIES} from './constants';
 import {useHeader} from './useHeader';
 
 export const Header = () => {
@@ -9,11 +10,10 @@ export const Header = () => {
       <header>
         <h2>Actual rates</h2>
         <div>
-          {Object.entries(rates).map(([key, value]) => (
+          {HEADER_CURRENCIES.map((currencyCode) => (
             <CurrencyInfo
-              key={key}
-              code={key}
-              value={value}
+              key={currencyCode}
+              code={currencyCode}
             />
           ))}
         </div>

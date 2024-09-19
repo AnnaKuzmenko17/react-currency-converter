@@ -1,1 +1,1 @@
-export const BASE_URL = 'http://api.freecurrencyapi.com/v1';
+export const BASE_URL = 'https://api.freecurrencyapi.com/v1';
