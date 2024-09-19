@@ -15,11 +15,13 @@ export const Select: FC<Props> = ({type}) => {
     <select
       value={value}
       onChange={handleChange}
+      className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-accent"
     >
       {CURRENCY_OPTIONS.map((currency) => (
         <option
           key={currency}
           value={currency}
+          selected={value === currency}
         >
           {currency}
         </option>

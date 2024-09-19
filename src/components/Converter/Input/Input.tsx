@@ -8,17 +8,18 @@ interface Props {
 }
 
 export const Input: FC<Props> = ({type}) => {
-  const {handleChange, label, value, placeholder} = useInput(type);
+  const {handleChange, handleKeyDown, value, placeholder} = useInput(type);
 
   return (
-    <div>
-      <label>{label} Amount</label>
+    <div className="mb-4">
       <input
         type="number"
         value={value}
         onChange={handleChange}
+        onKeyDown={handleKeyDown}
         placeholder={placeholder}
         min="0"
+        className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-accent"
       />
     </div>
   );

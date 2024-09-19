@@ -11,9 +11,9 @@ export const useStore = create<StoreState>((set, get) => ({
   firstCurrencyAmount: 1,
   secondCurrencyAmount: 1,
   setRates: (rates) =>
-    set((state) => ({
-      rates: {...state.rates, ...rates},
-    })),
+    set({
+      rates: rates,
+    }),
   setFirstCurrency: (currency) => {
     const {rates, firstCurrency, secondCurrency, firstCurrencyAmount} = get();
     set({

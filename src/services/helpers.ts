@@ -1,5 +1,9 @@
-import {CurrencyCode, Rates} from '@/types/types';
+import {Rates} from '@/types/types';
 
-export const calculateCurrencyAmount = (amount: number, rates: Rates, from: CurrencyCode, to: CurrencyCode) => {
-  return (amount * rates[to]) / rates[from];
+const formatCurrency = (value: number): number => {
+  return parseFloat(value.toFixed(2));
+};
+
+export const calculateCurrencyAmount = (amount: number, rates: Rates, from: string, to: string) => {
+  return formatCurrency((amount * rates[to]) / rates[from]);
 };

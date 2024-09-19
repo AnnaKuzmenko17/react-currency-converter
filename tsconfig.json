@@ -32,5 +32,5 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["vite.config.ts", "src"]
+  "include": ["vite.config.ts", "src", "tailwind.config.ts", "postcss.config.js"]
 }

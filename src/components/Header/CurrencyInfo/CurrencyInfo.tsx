@@ -10,9 +10,9 @@ export const CurrencyInfo: FC<Props> = ({code}) => {
   const value = useCurrencyInfo(code);
 
   return (
-    <div>
-      <p>{code}</p>
-      <span>{value}</span>
+    <div className="bg-white text-center p-4 rounded shadow-md">
+      <p className="font-semibold text-lg">{code}</p>
+      <span className="text-xl font-bold">{value}</span>
     </div>
   );
 };

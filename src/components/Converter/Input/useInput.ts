@@ -1,4 +1,4 @@
-import {type ChangeEvent} from 'react';
+import {type ChangeEvent, type KeyboardEvent} from 'react';
 
 import {useStore} from '@/store/useStore';
 
@@ -23,13 +23,32 @@ export const useInput = (type: Currency) => {
     }
   };
 
-  const label = type === Currency.FIRST ? firstCurrency : secondCurrency;
+  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
+    e.preventDefault();
+
+    if (type === Currency.FIRST) {
+      if (e.key === 'ArrowUp') {
+        setFirstCurrencyAmount(firstCurrencyAmount + 1);
+      }
+      if (e.key === 'ArrowDown') {
+        setFirstCurrencyAmount(Math.max(0, firstCurrencyAmount - 1));
+      }
+    } else {
+      if (e.key === 'ArrowUp') {
+        setSecondCurrencyAmount(secondCurrencyAmount + 1);
+      }
+      if (e.key === 'ArrowDown') {
+        setSecondCurrencyAmount(Math.max(0, secondCurrencyAmount - 1));
+      }
+    }
+  };
+
   const value = type === Currency.FIRST ? firstCurrencyAmount : secondCurrencyAmount;
   const placeholder = `Enter ${type === Currency.FIRST ? firstCurrency : secondCurrency} amount`;
 
   return {
     handleChange,
-    label,
+    handleKeyDown,
     value,
     placeholder,
   };
