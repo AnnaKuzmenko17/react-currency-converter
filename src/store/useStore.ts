@@ -15,10 +15,10 @@ export const useStore = create<StoreState>((set, get) => ({
       rates: rates,
     }),
   setFirstCurrency: (currency) => {
-    const {rates, firstCurrency, secondCurrency, firstCurrencyAmount} = get();
+    const {rates, secondCurrency, firstCurrencyAmount} = get();
     set({
       firstCurrency: currency,
-      secondCurrencyAmount: calculateCurrencyAmount(firstCurrencyAmount, rates, firstCurrency, secondCurrency),
+      secondCurrencyAmount: calculateCurrencyAmount(firstCurrencyAmount, rates, currency, secondCurrency),
     });
   },
   setFirstCurrencyAmount: (amount) => {
@@ -29,10 +29,10 @@ export const useStore = create<StoreState>((set, get) => ({
     });
   },
   setSecondCurrency: (currency) => {
-    const {rates, firstCurrency, secondCurrency, secondCurrencyAmount} = get();
+    const {rates, firstCurrency, secondCurrencyAmount} = get();
     set({
       secondCurrency: currency,
-      firstCurrencyAmount: calculateCurrencyAmount(secondCurrencyAmount, rates, secondCurrency, firstCurrency),
+      firstCurrencyAmount: calculateCurrencyAmount(secondCurrencyAmount, rates, currency, firstCurrency),
     });
   },
   setSecondCurrencyAmount: (amount) => {
