@@ -1,1 +1,1 @@
-export const HEADER_CURRENCIES = ['EUR', 'AUD', 'CAD'];
+export const CURRENCY_OPTIONS = ['EUR', 'AUD', 'CAD'];

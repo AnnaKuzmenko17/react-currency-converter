@@ -1,5 +1,5 @@
 import {CurrencyInfo} from './components/CurrencyInfo';
-import {HEADER_CURRENCIES} from './constants';
+import {CURRENCY_OPTIONS} from './constants';
 import {useHeader} from './useHeader';
 
 export const Header = () => {
@@ -10,7 +10,7 @@ export const Header = () => {
       <header>
         <h2>Actual rates</h2>
         <div>
-          {HEADER_CURRENCIES.map((currencyCode) => (
+          {CURRENCY_OPTIONS.map((currencyCode) => (
             <CurrencyInfo
               key={currencyCode}
               code={currencyCode}
